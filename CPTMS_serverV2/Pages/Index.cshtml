@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome,@User.Identity?.Name</h1>
+    <h2>教师门户：<a asp-page="/Teacher">点我。</a></h2>
+    <h2>学生门户：<a asp-page="/Student">点我。</a></h2>
+</div>

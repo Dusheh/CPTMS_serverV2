@@ -1,0 +1,2 @@
+1.Role.cs里的枚举键会被用来反射到具体的cshtml.cs里的Authorize属性里。在修改枚举值的时候应该要注意这个。
+2.登录的门户如果在打开没有权限的网页时（Teacher角色打开Student），会被重定向到AccessDenied.cshtml这个页面，配置这个重定向Url在Program.cs的options.AccessDeniedPath=字段。
