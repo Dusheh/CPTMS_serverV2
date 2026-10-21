@@ -12,4 +12,13 @@
     <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Modules\Class\Enrollmant\Interfaces\" />
+    <Folder Include="Modules\Class\Enrollmant\Services\" />
+    <Folder Include="Modules\Class\HomeworkManager\Interfaces\" />
+    <Folder Include="Modules\Class\HomeworkManager\Services\" />
+    <Folder Include="Modules\Class\StudentManager\Interfaces\" />
+    <Folder Include="Modules\Class\StudentManager\Services\" />
+  </ItemGroup>
+
 </Project>

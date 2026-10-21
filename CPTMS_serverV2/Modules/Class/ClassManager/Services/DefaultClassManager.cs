@@ -1,6 +1,6 @@
-﻿using CPTMS_serverV2.Modules.ClassManager.Interfaces;
+﻿using CPTMS_serverV2.Modules.School.ClassManager.Interfaces;
 
-namespace CPTMS_serverV2.Modules.ClassManager.Services
+namespace CPTMS_serverV2.Modules.School.ClassManager.Services
 {
     public class DefaultClassManager : IClassManager
     {
@@ -24,6 +24,16 @@ namespace CPTMS_serverV2.Modules.ClassManager.Services
         {
 
             return false;
+        }
+
+        public bool ChangeClassName(ClassControlType nameOrID, string classNameOrID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ChangeClassID(ClassControlType nameOrID, string classNameOrID)
+        {
+            throw new NotImplementedException();
         }
     }
 }

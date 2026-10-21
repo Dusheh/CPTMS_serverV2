@@ -1,4 +1,4 @@
-﻿namespace CPTMS_serverV2.Modules.ClassManager.Interfaces
+﻿namespace CPTMS_serverV2.Modules.School.ClassManager.Interfaces
 {
     public enum ClassControlType
     {
