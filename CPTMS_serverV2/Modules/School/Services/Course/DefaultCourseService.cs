@@ -1,8 +1,8 @@
-﻿using CPTMS_serverV2.Modules.School.ClassManager.Interfaces;
+﻿using CPTMS_serverV2.Modules.School.Interfaces.ClassManager;
 
-namespace CPTMS_serverV2.Modules.School.ClassManager.Services
+namespace CPTMS_serverV2.Modules.School.Services.ClassManager
 {
-    public class DefaultClassManager : IClassManager
+    public class DefaultCourseService : ICourseService
     {
         private string GenerateClassID()
         {
@@ -20,18 +20,18 @@ namespace CPTMS_serverV2.Modules.School.ClassManager.Services
             return false;
         }
 
-        public bool DeleteClass(ClassControlType deleteType, string classNameOrID)
+        public bool DeleteClass(CourseControlType deleteType, string classNameOrID)
         {
 
             return false;
         }
 
-        public bool ChangeClassName(ClassControlType nameOrID, string classNameOrID)
+        public bool ChangeClassName(CourseControlType nameOrID, string classNameOrID)
         {
             throw new NotImplementedException();
         }
 
-        public bool ChangeClassID(ClassControlType nameOrID, string classNameOrID)
+        public bool ChangeClassID(CourseControlType nameOrID, string classNameOrID)
         {
             throw new NotImplementedException();
         }
