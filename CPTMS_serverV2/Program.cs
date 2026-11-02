@@ -1,6 +1,9 @@
+using CPTMS_serverV2.Modules.Data;
 using CPTMS_serverV2.Modules.Login.Interfaces;
 using CPTMS_serverV2.Modules.Login.Services;
+using CPTMS_serverV2.Modules.School.Entities;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 
 namespace CPTMS_serverV2
 {
@@ -11,6 +14,9 @@ namespace CPTMS_serverV2
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<AppDbContext>(options => 
+                options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
@@ -42,6 +48,24 @@ namespace CPTMS_serverV2
             app.MapStaticAssets();
             app.MapRazorPages()
                .WithStaticAssets();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+                if(!context.Students.Any())
+                {
+                    var testStudent = new Student
+                    {
+                        Name = "测试学生",
+                        LinuxAccountId = "admin",
+                        PasswordHash = "123456"
+                    };
+
+                    context.Students.Add(testStudent);
+                    context.SaveChanges();
+                }
+            }
 
             app.Run();
         }
